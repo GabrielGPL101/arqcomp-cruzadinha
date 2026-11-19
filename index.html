@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101116">
+    <meta name="description" content="Treine Arquitetura Computacional em quatro jogos.">
+    <title>Operação ARQCOMP</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="style.css">
+    <script src="conteudo.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="topo">
+        <div class="container barra">
+            <button class="marca" onclick="voltarInicio()" aria-label="Operação ARQCOMP, início">
+                <span class="mira" aria-hidden="true"></span><span>OPERAÇÃO <b>ARQCOMP</b></span>
+            </button>
+            <span class="disciplina">ARQUITETURA COMPUTACIONAL <span> / </span> SPRINT 3</span>
+            <div class="xp"><span aria-hidden="true">◆</span> <b id="totalXp">0</b> XP</div>
+        </div>
+    </header>
+    <main class="container">
+        <div id="inicio">
+            <div class="capa">
+                <div class="capaTexto">
+                    <p class="rotulo"><span></span> CENTRAL DE TREINAMENTO</p>
+                    <h1>OPERAÇÃO<br><strong>ARQCOMP</strong></h1>
+                    <p>Da CPU aos barramentos, revise Arquitetura Computacional em quatro desafios.</p>
+                    <button class="botao primario" onclick="abrirJogo(0)">Jogar cruzadinha</button>
+                </div>
+            </div>
+            <div class="cabecalhoModos">
+                <div><h2>Modos de treino</h2><p>Escolha um modo e ganhe XP ao melhorar seu recorde.</p></div>
+                <div class="progresso"><span id="resumoProgresso">0/4 MODOS CONCLUÍDOS</span><div id="marcasProgresso" aria-hidden="true"></div></div>
+            </div>
+            <div class="modos">
+                <article class="cartao cruz">
+                    <div class="cartaoTopo"><span class="icone" aria-hidden="true">▦</span><span class="premio">ATÉ 160 XP</span></div>
+                    <h3>Cruzadinha</h3><p>Preencha a grade da atividade com 16 termos a partir das pistas.</p>
+                    <button class="botao secundario" onclick="abrirJogo(0)">Jogar cruzadinha</button>
+                </article>
+                <article class="cartao quiz">
+                    <div class="cartaoTopo"><span class="icone" aria-hidden="true">◎</span><span class="premio">ATÉ 120 XP</span></div>
+                    <h3>Quiz tático</h3><p>Responda a 12 perguntas e veja a explicação após cada escolha.</p>
+                    <button class="botao secundario" onclick="abrirJogo(1)">Começar quiz</button>
+                </article>
+                <article class="cartao pares">
+                    <div class="cartaoTopo"><span class="icone" aria-hidden="true">◇</span><span class="premio">ATÉ 80 XP</span></div>
+                    <h3>Jogo da memória</h3><p>Vire as cartas e encontre oito pares de termos e definições.</p>
+                    <button class="botao secundario" onclick="abrirJogo(2)">Virar cartas</button>
+                </article>
+                <article class="cartao ordem">
+                    <div class="cartaoTopo"><span class="icone" aria-hidden="true">≡</span><span class="premio">ATÉ 40 XP</span></div>
+                    <h3>Ordem de execução</h3><p>Monte quatro sequências para revisar a CPU, a memória e o DMA.</p>
+                    <button class="botao secundario" onclick="abrirJogo(3)">Ordenar etapas</button>
+                </article>
+            </div>
+        </div>
+        <div id="treino" hidden>
+            <button class="voltar" onclick="voltarInicio()">‹ Voltar aos modos</button>
+            <div class="cabecalhoJogo">
+                <p class="rotulo"><span></span> MODO DE TREINO</p>
+                <h1 id="nomeJogo" tabindex="-1"></h1>
+                <p id="descricaoJogo"></p>
+            </div>
+            <div id="areaJogo"></div>
+        </div>
+    </main>
+    <footer class="container rodape"><span>Operação ARQCOMP</span><span>Arquitetura Computacional · SPTech</span></footer>
+</body>
+</html>
